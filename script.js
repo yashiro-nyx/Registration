@@ -4,6 +4,7 @@
   const form       = document.getElementById('regForm');
   const successMsg = document.getElementById('successMsg');
 
+  function isValidName(v) { return /^[A-Za-z\s]+$/.test(v.trim()); }
   function isEmail(v)  { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function isPhone(v)  { return /^(09|\+639)\d{9}$/.test(v.replace(/\s/g, '')); }
   function isZip(v)    { return /^\d{4}$/.test(v.trim()); }
@@ -71,13 +72,20 @@
           }
       }
 
-      if (['lastName', 'firstName', 'barangay', 'city', 'province', 'street'].includes(name) && !isText(val)) {
+      if (['lastName', 'firstName', 'middleName'].includes(name)) {
+        if (!isValidName(val)) {
+          showError(input, 'Name must contain letters only.');
+          return false;
+        }
+        if (val.length < 2 && input.hasAttribute('required')) {
           showError(input, 'Must be at least 2 characters.');
           return false;
+        }
       }
 
-      markValid(input);
-      return true;
+  if (['barangay', 'city', 'province', 'street'].includes(name) && !isText(val)) {
+    showError(input, 'Must be at least 2 characters.');
+    return false;
   }
 
   form.querySelectorAll('input, select').forEach((field) => {
