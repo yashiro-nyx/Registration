@@ -4,6 +4,7 @@
   const form       = document.getElementById('regForm');
   const successMsg = document.getElementById('successMsg');
 
+  function isValidName(v) { return /^[A-Za-z\s]+$/.test(v.trim()); }
   function isEmail(v)  { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function isPhone(v)  { return /^(09|\+639)\d{9}$/.test(v.replace(/\s/g, '')); }
   function isZip(v)    { return /^\d{4}$/.test(v.trim()); }
@@ -43,6 +44,11 @@
 
       if (required && !val) {
           showError(input, 'This field is required.');
+          return false;
+      }
+
+      if (name === 'fullName' && !isValidName(val)) {
+          showError(input, 'Full name must contain letters only.');
           return false;
       }
 
