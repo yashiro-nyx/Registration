@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romualdo - Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="header-title">Registration Form</span>
+            <p class="header-sub">Please fill in all required fields marked with <span class="req">*</span></p>
+        </header>
+
+        <form id="regForm" novalidate>
+
+            <span class="title">Personal Information</span>
+            <div class="fields">
+                <div class="input-field">
+                    <label>Last Name <span class="req">*</span></label>
+                    <input type="text" name="lastName" placeholder="e.g. dela Cruz" required>
+                </div>
+                <div class="input-field">
+                    <label>First Name <span class="req">*</span></label>
+                    <input type="text" name="firstName" placeholder="e.g. Juan" required>
+                </div>
+                <div class="input-field">
+                    <label>Middle Name</label>
+                    <input type="text" name="middleName" placeholder="e.g. Santos">
+                </div>
+                <div class="input-field">
+                    <label>Date of Birth <span class="req">*</span></label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div class="input-field">
+                    <label>Gender <span class="req">*</span></label>
+                    <select name="gender" required>
+                        <option value="">Select gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Non-binary</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label>Civil Status <span class="req">*</span></label>
+                    <select name="civilStatus" required>
+                        <option value="">Select status</option>
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Widowed</option>
+                        <option>Separated</option>
+                        <option>Annulled</option>
+                    </select>
+                </div>
+            </div>
+
+            <span class="title">Contact Information</span>
+            <div class="fields">
+                <div class="input-field">
+                    <label>Email Address <span class="req">*</span></label>
+                    <input type="email" name="email" placeholder="e.g. juan@email.com" required>
+                </div>
+                <div class="input-field">
+                    <label>Mobile Number <span class="req">*</span></label>
+                    <input type="tel" name="phone" placeholder="e.g. 09171234567" required>
+                </div>
+            </div>
+
+            <span class="title">Address</span>
+            <div class="fields">
+                <div class="input-field full">
+                    <label>House No. / Street <span class="req">*</span></label>
+                    <input type="text" name="street" placeholder="e.g. 123 Rizal St." required>
+                </div>
+                <div class="input-field">
+                    <label>Barangay <span class="req">*</span></label>
+                    <input type="text" name="barangay" placeholder="e.g. Brgy. San Antonio" required>
+                </div>
+                <div class="input-field">
+                    <label>City / Municipality <span class="req">*</span></label>
+                    <input type="text" name="city" placeholder="e.g. Quezon City" required>
+                </div>
+                <div class="input-field">
+                    <label>Province <span class="req">*</span></label>
+                    <input type="text" name="province" placeholder="e.g. Metro Manila" required>
+                </div>
+                <div class="input-field">
+                    <label>ZIP Code <span class="req">*</span></label>
+                    <input type="text" name="zipCode" placeholder="e.g. 1100" required>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="submitBtn">
+                    <span>Submit</span>
+                    <i class="uil uil-check-circle"></i>
+                </button>
+            </div>
+
+        </form>
+
+        <div class="success-msg" id="successMsg">
+            <i class="uil uil-check-circle"></i>
+            <h3>Registration Submitted!</h3>
+            <p>Thank you for registering. Your information has been received.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
